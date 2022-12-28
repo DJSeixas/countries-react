@@ -1,26 +1,41 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+
+import { GlobalStyles } from './styles/global-styles';
+import { ThemeProvider } from 'styled-components';
+import light from './styles/themes/light';
+import dark from './styles/themes/dark';
+
+import Home from './pages/Home';
+import Header from './components/Header';
+import Detail from './pages/Detail';
+import PageNotFound from './pages/PageNotFound'
+import { useAppSelector } from './features/hooks';
+import { getTheme } from './features/theme/themeSlice';
+
+
+
+const App = () => {
+
+    const theme = useAppSelector(getTheme)
+
+    const currentTheme = theme.theme === 'light' ? light : dark
+
+    console.log(currentTheme)
+
+    return (
+    <ThemeProvider theme={currentTheme}>
+    <GlobalStyles />
+    <Router>
+    <Header />
+    <Routes>
+    <Route path='/' element={<Home />} />
+    <Route path="/name/:name" element={<Detail />} />
+    <Route path='*' element={<PageNotFound />} />
+    </Routes>
+    </Router>
+    </ThemeProvider>
+    )
 }
 
-export default App;
+export default App
