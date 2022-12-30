@@ -23,6 +23,7 @@ const Search = () => {
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setSearchValue(e.target.value)
+        dispatch(fetchAsyncCountriesSearch(e.target.value))
         if(e.target.value === ""){
             dispatch(clearFilteredCountries())
         }
