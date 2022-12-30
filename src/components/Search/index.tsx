@@ -23,7 +23,7 @@ const Search = () => {
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setSearchValue(e.target.value)
-        if(searchValue === ""){
+        if(e.target.value === ""){
             dispatch(clearFilteredCountries())
         }
     }

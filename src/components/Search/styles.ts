@@ -15,6 +15,16 @@ export const Container = styled.div`
     border-radius: .5rem;
     box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.2);
 
+    @media(max-width: 56.25em){
+        width: 30rem;
+    }
+
+    @media((max-width: 37.5em)){
+        width: 32rem; 
+        height: 4rem;
+        left: 6rem;
+    }
+
     svg{
         height: 1.6rem;
         padding-left: 1.6rem;

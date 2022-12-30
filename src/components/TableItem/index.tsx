@@ -12,7 +12,7 @@ const TableItem = ({ country }: ItemProps) => {
         <Container>
             <Link to={`/name/${country.name}`}>
             <Img>
-                <img src={country.flags?.png} alt="flag" height={180}/>
+                <img src={country.flags?.png} alt="flag" />
             </Img>
             <Info>
                 <h2>{country.name}</h2>

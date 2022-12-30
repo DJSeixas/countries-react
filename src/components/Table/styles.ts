@@ -3,9 +3,12 @@ import styled from "styled-components";
 export const Container = styled.div`
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
     align-items: center;
-    width: 100%;
+    justify-content: space-around;
     margin-top: 14rem;
     padding: 0 5rem;
+
+    @media((max-width: 37.5em)){
+        margin-top: 15rem;
+    }
 `

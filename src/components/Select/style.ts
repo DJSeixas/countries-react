@@ -15,6 +15,13 @@ export const Container = styled.div`
     top: 11rem;
     right: 12rem;
     box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.2);
+
+    @media((max-width: 37.5em)){
+        top: 18rem;
+        left: 6rem;
+        height: 4rem;
+        width: 15rem;
+    }
 `
 export const SelectButton = styled.button`
     display: flex;
@@ -42,6 +49,10 @@ export const Lista = styled.ul<ListaProps>`
     padding: 1.4rem 2rem;
     list-style: none;
     font-size: 1.3rem;
+
+        @media((max-width: 37.5em)){
+            width: 15rem;
+        }
 
     opacity: ${props => props.visible ? 1 : 0};
     transition: all .2s ease;

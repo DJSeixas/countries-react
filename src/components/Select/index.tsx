@@ -9,7 +9,7 @@ import { clearFilteredCountries, fetchAsyncCountriesSelect } from "../../feature
 const Select = () => {
 
     const [ visible, setVisible ] = useState(false)
-    const [ region, setRegion ] = useState("")
+    const [ region, setRegion ] = useState("all")
 
     const dispatch = useAppDispatch()
 

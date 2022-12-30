@@ -60,31 +60,19 @@ const countriesSlice = createSlice({
         }
     },
     extraReducers: (builder) => {
-        builder.addCase(fetchAsyncCountries.pending, () => {
-            console.log("Pending")
-        })
-
         builder.addCase(fetchAsyncCountries.fulfilled, (state, {payload}) => {
-                console.log("fetched successfully!")
                 return {...state, countries: payload}  
         })
 
-        builder.addCase(fetchAsyncCountries.rejected, () => {
-            console.log("Rejected!")
-        })
-
         builder.addCase(fetchAsyncCountriesDetail.fulfilled, (state, {payload}) => {
-            console.log("fetched successfully!")
             state.selectCountry = payload
         })
 
         builder.addCase(fetchAsyncCountriesSearch.fulfilled, (state, {payload}) => {
-            console.log("fetched successfully!")
             return { ...state, filterCountries: payload }
         })
 
         builder.addCase(fetchAsyncCountriesSelect.fulfilled, (state, {payload}) => {
-            console.log("fetched successfully!")
             return { ...state, filterCountries: payload }
         })
     },

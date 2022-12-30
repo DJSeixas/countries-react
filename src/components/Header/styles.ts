@@ -10,6 +10,10 @@ export const Container = styled.div`
     height: 7rem;
     background: ${props => props.theme.colors.elem};
     padding: 0 10rem;
+
+    @media((max-width: 37.5em)){
+        padding: 0 2rem;
+    }
 `
 
 export const Title = styled.h1`

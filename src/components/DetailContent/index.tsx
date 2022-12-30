@@ -29,7 +29,7 @@ const DetailContent = ({countryDetail}: ItemProps) => {
                     <li><strong>Population: </strong>{countryDetail[0]?.population?.toLocaleString()}</li>
                     <li><strong>Region: </strong>{countryDetail[0]?.region}</li>
                     <li><strong>Sub Region: </strong>{countryDetail[0]?.subregion}</li>
-                    <li><strong>Capital: </strong>{countryDetail[0]?.capital}</li>
+                    <li className="space"><strong>Capital: </strong>{countryDetail[0]?.capital}</li>
                     <li><strong>Top Level Domain: </strong>{countryDetail[0]?.topLevelDomain}</li>
                     <li><strong>Currencies: </strong>{countryDetail[0]?.currencies[0].name}</li>
                     <li><strong className="languages">Languages: </strong>{
@@ -38,13 +38,13 @@ const DetailContent = ({countryDetail}: ItemProps) => {
                     ))}</li>
                 </InfoLista>
 
-                <p><strong>Border Countries:
+                <div className="borders"><strong>Border Countries:</strong>
                     {countryDetail[0]?.borders?.map((b:string, i:number) => {
                         return(
-                            <span className="borders" key={i}>{b}</span>
+                            <span className="bordersItem" key={i}>{b}</span>
                         )
                     })}
-                    </strong></p>
+                    </div>
             </Info>
             </>
             )

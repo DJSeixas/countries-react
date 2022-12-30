@@ -21,8 +21,6 @@ const App = () => {
 
     const currentTheme = theme.theme === 'light' ? light : dark
 
-    console.log(currentTheme)
-
     return (
     <ThemeProvider theme={currentTheme}>
     <GlobalStyles />
